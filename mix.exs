@@ -1,13 +1,13 @@
 defmodule Steamex.Mixfile do
   use Mix.Project
 
-  @version "0.0.9"
+  @version "0.1.0"
 
   def project do
     [
       app: :steamex,
       version: @version,
-      elixir: "~> 1.0",
+      elixir: "~> 1.12",
       description: description(),
       package: package(),
       build_embedded: Mix.env() == :prod,
@@ -26,7 +26,7 @@ defmodule Steamex.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [applications: [:logger, :httpoison]]
+    [applications: [:logger, :httpoison], extra_applications: [:sweet_xml, :plug]]
   end
 
   # Dependencies can be Hex packages:
@@ -40,9 +40,9 @@ defmodule Steamex.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
     [
-      {:httpoison, "~> 1.1"},
-      {:sweet_xml, "~> 0.6"},
-      {:plug, "~> 1.3", optional: true},
+      {:httpoison, "~> 2.0"},
+      {:sweet_xml, "~> 0.7"},
+      {:plug, "~> 1.14", optional: true},
       {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
