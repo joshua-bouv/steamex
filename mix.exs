@@ -40,7 +40,7 @@ defmodule Steamex.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
     [
-      {:httpoison, "~> 2.0"},
+      {:httpoison, "~> 2.1"},
       {:sweet_xml, "~> 0.7"},
       {:plug, "~> 1.14", optional: true},
       {:ex_doc, ">= 0.0.0", only: :dev}
